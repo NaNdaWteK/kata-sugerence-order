@@ -22,7 +22,7 @@ describe 'Kata order' do
     expect(relation.relationship.value?(item_id)).to be true
   end
 
-  it 'retrieves new incremented first level' do
+  it 'retrieves new incremented level sugerence' do
     base = Base.new
     create_level('1.0.0', 'room')
     base.add_order('1.0.0')
@@ -46,7 +46,7 @@ end
 
 describe 'Kata base' do
 
-  it 'stores numbers in Base' do
+  it 'stores order in Base' do
     base = Base.new
     create_level('1.0.0', 'room')
     base.add_order('1.0.0')
@@ -57,7 +57,7 @@ describe 'Kata base' do
     expect(base.keys_order[2]).to eq '2.0.0'
   end
 
-  it 'receives next major, minor and detail number' do
+  it 'retrieves next major, minor and detail order' do
     base = Base.new
     create_level('1.1.0', 'room')
     base.add_order('1.1.0')
@@ -85,7 +85,7 @@ end
 
 describe 'Kata ordinal' do
 
-  it 'receives a number string' do
+  it 'receives a order string' do
     new_order = '0.0.0'
     ordinal = Ordinal.new
 
@@ -94,7 +94,7 @@ describe 'Kata ordinal' do
 		expect(ordinal.order).to be new_order
   end
 
-  it 'gets first level number' do
+  it 'gets first level order' do
     new_order = '1.0.0'
     ordinal = Ordinal.new
     ordinal.save(new_order)
@@ -105,7 +105,7 @@ describe 'Kata ordinal' do
     expect(ordinal.major).to eq '1'
   end
 
-  it 'gets second level number' do
+  it 'gets second level order' do
     new_order = '1.2.0'
     ordinal = Ordinal.new
     ordinal.save(new_order)
@@ -116,7 +116,7 @@ describe 'Kata ordinal' do
     expect(ordinal.minor).to eq '2'
   end
 
-  it 'gets third level number' do
+  it 'gets third level order' do
     new_order = '1.2.3'
     ordinal = Ordinal.new
     ordinal.save(new_order)
